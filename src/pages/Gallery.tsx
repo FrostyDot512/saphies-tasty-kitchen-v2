@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
 import SectionHeading from "@/components/SectionHeading";
 
-import vid1 from "@/assets/videos/WhatsApp Video 2026-03-04 at 13.06.54.mp4";
-import vid2 from "@/assets/videos/WhatsApp Video 2026-03-04 at 13.07.47.mp4";
-import vid3 from "@/assets/videos/WhatsApp Video 2026-03-04 at 13.08.14.mp4";
-import vid4 from "@/assets/videos/WhatsApp Video 2026-03-04 at 13.10.47.mp4";
+import vid1 from "@/assets/videos/vid1.mp4";
+import vid2 from "@/assets/videos/vid2.mp4";
+import vid3 from "@/assets/videos/vid3.mp4";
+import vid4 from "@/assets/videos/vid4.mp4";
 
 const videos = [vid1, vid2, vid3, vid4];
 
