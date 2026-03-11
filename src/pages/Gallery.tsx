@@ -1,12 +1,12 @@
 import { motion } from "framer-motion";
 import SectionHeading from "@/components/SectionHeading";
 
-import vid1 from "@/assets/videos/vid1.mp4";
-import vid2 from "@/assets/videos/vid2.mp4";
-import vid3 from "@/assets/videos/vid3.mp4";
-import vid4 from "@/assets/videos/vid4.mp4";
-
-const videos = [vid1, vid2, vid3, vid4];
+const videos = [
+  "/videos/vid1.mp4",
+  "/videos/vid2.mp4",
+  "/videos/vid3.mp4",
+  "/videos/vid4.mp4",
+];
 
 const Gallery = () => {
   return (
