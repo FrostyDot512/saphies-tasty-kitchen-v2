@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Heart, Instagram, Facebook, Phone, Mail, MapPin } from "lucide-react";
+import { Heart, Phone, Mail, MapPin } from "lucide-react";
 import logo from "@/assets/logo.png";
 
 const Footer = () => (
@@ -37,8 +37,8 @@ const Footer = () => (
         <div className="space-y-4">
           <h4 className="font-display text-lg font-bold text-primary">Get in Touch</h4>
           <div className="space-y-3 text-secondary-foreground/70 font-body">
-            <a href="tel:+254700000000" className="flex items-center gap-2 hover:text-primary transition-colors">
-              <Phone size={16} /> +254 700 000 000
+            <a href="https://wa.me/256764701173" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-primary transition-colors">
+              <Phone size={16} /> +256 764 701 173
             </a>
             <a href="mailto:hello@saphiestasty.com" className="flex items-center gap-2 hover:text-primary transition-colors">
               <Mail size={16} /> hello@saphiestasty.com
@@ -48,12 +48,6 @@ const Footer = () => (
             </p>
           </div>
           <div className="flex gap-4 pt-2">
-            <a href="https://instagram.com/saphies.tasty" target="_blank" rel="noopener noreferrer" className="text-secondary-foreground/60 hover:text-primary transition-colors">
-              <Instagram size={22} />
-            </a>
-            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-secondary-foreground/60 hover:text-primary transition-colors">
-              <Facebook size={22} />
-            </a>
             <a href="https://tiktok.com/@saphies.tasty" target="_blank" rel="noopener noreferrer" className="text-secondary-foreground/60 hover:text-primary transition-colors">
               <svg viewBox="0 0 24 24" fill="currentColor" className="w-[22px] h-[22px]">
                 <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1v-3.5a6.37 6.37 0 00-.79-.05A6.34 6.34 0 003.15 15.2a6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.34-6.34V8.73a8.19 8.19 0 004.76 1.52V6.84a4.84 4.84 0 01-1-.15z"/>

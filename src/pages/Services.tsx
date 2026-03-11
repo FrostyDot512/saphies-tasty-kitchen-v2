@@ -82,7 +82,7 @@ const Services = () => (
           Reach out and let us create something delicious for your next occasion.
         </p>
         <a
-          href="https://wa.me/254700000000"
+          href="https://wa.me/256764701173"
           target="_blank"
           rel="noopener noreferrer"
           className="inline-block bg-secondary hover:bg-secondary/90 text-secondary-foreground font-body font-bold px-8 py-4 rounded-lg text-lg transition-all hover:scale-105"

@@ -9,7 +9,6 @@ const services = [
   { icon: UtensilsCrossed, title: "Snack Packs", desc: "Chapati, mandazi, samosas and more — perfect for sharing with loved ones." },
 ];
 
-
 const Index = () => {
   return (
     <div>
@@ -38,7 +37,7 @@ const Index = () => {
                 Our Services
               </Link>
               <a
-                href="https://www.whatsapp.com/"
+                href="https://wa.me/256764701173"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block border-2 border-primary text-primary hover:bg-primary hover:text-primary-foreground font-body font-bold px-8 py-4 rounded-lg text-lg transition-all"

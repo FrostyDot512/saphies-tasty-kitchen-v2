@@ -3,7 +3,6 @@ import { Phone, Mail, MapPin } from "lucide-react";
 import SectionHeading from "@/components/SectionHeading";
 
 const Contact = () => {
-
   return (
     <div className="pt-20">
       <section className="py-20 md:py-28 bg-secondary">
@@ -29,13 +28,13 @@ const Contact = () => {
           >
             <SectionHeading title="Contact Info" />
             <div className="space-y-6">
-              <a href="tel:+254700000000" className="flex items-center gap-4 group">
+              <a href="https://wa.me/256764701173" target="_blank" rel="noopener noreferrer" className="flex items-center gap-4 group">
                 <div className="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center group-hover:bg-primary/20 transition-colors">
                   <Phone className="text-primary" size={24} />
                 </div>
                 <div>
                   <p className="font-body font-bold text-foreground">Phone</p>
-                  <p className="font-body text-muted-foreground">+254 700 000 000</p>
+                  <p className="font-body text-muted-foreground">+256 764 701 173</p>
                 </div>
               </a>
               <a href="mailto:hello@saphiestasty.com" className="flex items-center gap-4 group">
@@ -64,7 +63,7 @@ const Contact = () => {
                 For the fastest response, reach us directly on WhatsApp!
               </p>
               <a
-                href="https://wa.me/254700000000"
+                href="https://wa.me/256764701173"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block bg-[hsl(142,70%,40%)] hover:bg-[hsl(142,70%,35%)] text-[hsl(0,0%,100%)] font-body font-bold px-6 py-3 rounded-xl transition-all hover:scale-105"

@@ -9,7 +9,6 @@ const values = [
   { icon: Clock, title: "Always Fresh", desc: "We prepare everything fresh for each order — no shortcuts, no compromises." },
 ];
 
-// Replace these with real team member names/roles/photos when ready
 const teamMembers = [
   { name: "Team Member 1", role: "Chef & Founder" },
   { name: "Team Member 2", role: "Head of Catering" },
@@ -19,25 +18,48 @@ const teamMembers = [
 
 const About = () => (
   <div className="pt-20">
-    {/* Hero */}
+
+    {/* Hero — Meet Saphie with solo photo placeholder */}
     <section className="py-20 md:py-28 bg-secondary">
       <div className="container mx-auto px-4">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          className="max-w-3xl mx-auto text-center"
-        >
-          <h1 className="font-display text-4xl md:text-6xl font-bold text-primary-foreground mb-6">
-            Meet <span className="text-primary">Saphie</span>
-          </h1>
-          <p className="font-body text-lg text-secondary-foreground/70 leading-relaxed">
-            Saphie's Tasty started from a simple dream — to share the flavours of home with
-            everyone. What began as cooking for family and friends quickly grew into a beloved
-            catering service known for generous portions, authentic taste, and that warm "auntie's
-            kitchen" feeling that makes every meal special.
-          </p>
-        </motion.div>
+        <div className="flex flex-col lg:flex-row items-center gap-12 max-w-5xl mx-auto">
+
+          {/* Text */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+            className="flex-1 text-center lg:text-left"
+          >
+            <h1 className="font-display text-4xl md:text-6xl font-bold text-primary-foreground mb-6">
+              Meet <span className="text-primary">Saphie</span>
+            </h1>
+            <p className="font-body text-lg text-secondary-foreground/70 leading-relaxed">
+              Saphie's Tasty started from a simple dream — to share the flavours of home with
+              everyone. What began as cooking for family and friends quickly grew into a beloved
+              catering service known for generous portions, authentic taste, and that warm "auntie's
+              kitchen" feeling that makes every meal special.
+            </p>
+          </motion.div>
+
+          {/* Solo photo placeholder — replace with Saphie's photo when ready */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+            className="flex-shrink-0"
+          >
+            {/* TO ADD SAPHIE'S PHOTO: replace the div below with:
+                <img src={saphiePhoto} alt="Saphie" className="w-64 h-80 object-cover rounded-3xl shadow-card" />
+            */}
+            <div className="w-64 h-80 rounded-3xl bg-gradient-to-br from-primary/10 to-secondary/60 border-2 border-dashed border-primary/30 flex flex-col items-center justify-center gap-3 shadow-card">
+              <ImageIcon className="text-primary/40" size={48} />
+              <p className="font-body text-secondary-foreground/50 text-sm font-medium">Saphie's photo</p>
+              <p className="font-body text-secondary-foreground/40 text-xs">Coming soon</p>
+            </div>
+          </motion.div>
+
+        </div>
       </div>
     </section>
 
@@ -45,9 +67,8 @@ const About = () => (
     <section className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <SectionHeading title="Our Story" subtitle="From a family kitchen to your favourite caterer." />
-
-        {/* Story text + image placeholder side by side */}
         <div className="max-w-5xl mx-auto flex flex-col lg:flex-row gap-12 items-center">
+
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -67,7 +88,7 @@ const About = () => (
             </p>
           </motion.div>
 
-          {/* Image placeholder — replace src with your actual image */}
+          {/* Story image placeholder — replace with your image when ready */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             whileInView={{ opacity: 1, scale: 1 }}
@@ -83,12 +104,42 @@ const About = () => (
               <p className="font-body text-muted-foreground/60 text-xs">Replace this placeholder with your image</p>
             </div>
           </motion.div>
+
         </div>
       </div>
     </section>
 
-    {/* Values */}
+    {/* Meet the Team */}
     <section className="py-20 bg-muted">
+      <div className="container mx-auto px-4">
+        <SectionHeading title="Meet the Team" subtitle="The wonderful people behind every meal." />
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-10 max-w-4xl mx-auto">
+          {teamMembers.map((member, i) => (
+            <motion.div
+              key={member.name}
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: i * 0.1 }}
+              className="flex flex-col items-center text-center"
+            >
+              {/* TO ADD TEAM PHOTO: replace the div below with:
+                  <img src={memberPhoto} alt={member.name} className="w-36 h-36 object-cover rounded-full shadow-card mb-4 border-4 border-primary/20" />
+              */}
+              <div className="w-36 h-36 rounded-full bg-gradient-to-br from-primary/10 to-background border-2 border-dashed border-primary/30 flex flex-col items-center justify-center mb-4 shadow-card">
+                <ImageIcon className="text-primary/40" size={30} />
+                <p className="font-body text-muted-foreground/60 text-xs mt-1">Photo</p>
+              </div>
+              <h4 className="font-display text-base font-bold text-foreground">{member.name}</h4>
+              <p className="font-body text-muted-foreground text-sm">{member.role}</p>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    {/* Our Values */}
+    <section className="py-20 bg-background">
       <div className="container mx-auto px-4">
         <SectionHeading title="Our Values" />
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -112,34 +163,6 @@ const About = () => (
       </div>
     </section>
 
-    {/* The Team */}
-    <section className="py-20 bg-background">
-      <div className="container mx-auto px-4">
-        <SectionHeading title="The Team" subtitle="The wonderful people behind every meal." />
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
-          {teamMembers.map((member, i) => (
-            <motion.div
-              key={member.name}
-              initial={{ opacity: 0, y: 40 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: i * 0.1 }}
-              className="flex flex-col items-center text-center"
-            >
-              {/* TO ADD TEAM PHOTO: replace the div below with:
-                  <img src={memberPhoto} alt={member.name} className="w-32 h-32 object-cover rounded-full shadow-card mb-4" />
-              */}
-              <div className="w-32 h-32 rounded-full bg-gradient-to-br from-primary/10 to-muted border-2 border-dashed border-primary/30 flex flex-col items-center justify-center mb-4 shadow-card">
-                <ImageIcon className="text-primary/40" size={28} />
-                <p className="font-body text-muted-foreground/60 text-xs mt-1">Photo</p>
-              </div>
-              <h4 className="font-display text-base font-bold text-foreground">{member.name}</h4>
-              <p className="font-body text-muted-foreground text-sm">{member.role}</p>
-            </motion.div>
-          ))}
-        </div>
-      </div>
-    </section>
   </div>
 );
 
