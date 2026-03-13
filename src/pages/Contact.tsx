@@ -37,7 +37,7 @@ const Contact = () => {
                   <p className="font-body text-muted-foreground">+256 764 701 173</p>
                 </div>
               </a>
-              <a href="mailto:hello@saphiestasty.com" className="flex items-center gap-4 group">
+              <a href="mailto:namazzi_saphie@icloud.com" className="flex items-center gap-4 group">
                 <div className="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center group-hover:bg-primary/20 transition-colors">
                   <Mail className="text-primary" size={24} />
                 </div>
