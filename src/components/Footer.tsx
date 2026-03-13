@@ -40,8 +40,8 @@ const Footer = () => (
             <a href="https://wa.me/256764701173" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 hover:text-primary transition-colors">
               <Phone size={16} /> +256 764 701 173
             </a>
-            <a href="mailto:hello@saphiestasty.com" className="flex items-center gap-2 hover:text-primary transition-colors">
-              <Mail size={16} /> hello@saphiestasty.com
+            <a href="mailto:namazzi_saphie@icloud.com" className="flex items-center gap-2 hover:text-primary transition-colors">
+              <Mail size={16} /> namazzi_saphie@icloud.com
             </a>
             <p className="flex items-center gap-2">
               <MapPin size={16} /> Kampala, Uganda
