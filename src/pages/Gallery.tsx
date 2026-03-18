@@ -1,12 +1,19 @@
 import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
 import SectionHeading from "@/components/SectionHeading";
+import photo1 from "@/assets/images/STK5.jpeg";
+import photo2 from "@/assets/images/STK9.jpeg";
+import photo3 from "@/assets/images/STK10.jpeg";
+
+const photos = [photo1, photo2, photo3];
+const photoLabels = ["Samosas", "Mandazi", "Meat & Pineapple"];
 
 const videos = [
-  "/videos/vid1.mp4",
-  "/videos/vid2.mp4",
-  "/videos/vid3.mp4",
-  "/videos/vid4.mp4",
+  "/videos/STK1.mp4",
+  "/videos/STK2.mp4",
+  "/videos/STK3.mp4",
+  "/videos/STK4.mp4",
+  "/videos/STK7.mp4",
 ];
 
 const Gallery = () => {
@@ -35,32 +42,32 @@ const Gallery = () => {
           </div>
         </section>
 
+        {/* Photo Gallery */}
         <section className="py-20 bg-background">
           <div className="container mx-auto px-4">
             <SectionHeading title="Photo Gallery" subtitle="Snapshots from our kitchen and events." />
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-              {Array.from({ length: 8 }).map((_, i) => (
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
+              {photos.map((src, i) => (
                 <motion.div
                   key={i}
                   initial={{ opacity: 0, scale: 0.9 }}
                   whileInView={{ opacity: 1, scale: 1 }}
                   viewport={{ once: true }}
-                  transition={{ delay: i * 0.05 }}
-                  className="aspect-square bg-muted rounded-2xl overflow-hidden group cursor-pointer relative"
+                  transition={{ delay: i * 0.1 }}
+                  className="aspect-square rounded-2xl overflow-hidden shadow-card border border-border group"
                 >
-                  <div className="w-full h-full bg-gradient-to-br from-primary/10 to-secondary/30 flex items-center justify-center">
-                    <span className="font-body text-muted-foreground text-sm">Photo {i + 1}</span>
-                  </div>
-                  <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/20 transition-all duration-300 rounded-2xl" />
+                  <img
+                    src={src}
+                    alt={photoLabels[i]}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
                 </motion.div>
               ))}
             </div>
-            <p className="text-center text-muted-foreground font-body mt-8 text-sm">
-              Add your real photos to the gallery to showcase your delicious creations!
-            </p>
           </div>
         </section>
 
+        {/* Video Gallery */}
         <section className="py-20 bg-muted">
           <div className="container mx-auto px-4">
             <SectionHeading title="Video Gallery" subtitle="Watch us in action!" />

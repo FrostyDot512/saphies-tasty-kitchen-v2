@@ -1,7 +1,8 @@
 import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
-import { Heart, Users, Utensils, Clock, ImageIcon } from "lucide-react";
+import { Heart, Users, Utensils, Clock } from "lucide-react";
 import SectionHeading from "@/components/SectionHeading";
+import saphiePhoto from "@/assets/images/STK11.jpeg";
 
 const values = [
   { icon: Heart, title: "Made with Love", desc: "Every meal is prepared with the same care and passion as cooking for our own family." },
@@ -11,10 +12,10 @@ const values = [
 ];
 
 const teamMembers = [
-  { name: "Team Member 1", role: "Chef & Founder" },
-  { name: "Team Member 2", role: "Head of Catering" },
-  { name: "Team Member 3", role: "Delivery & Logistics" },
-  { name: "Team Member 4", role: "Kitchen Assistant" },
+  { desc: "Our head chef brings years of passion and experience to every dish she prepares." },
+  { desc: "Dedicated to making sure every catering event runs smoothly and deliciously." },
+  { desc: "Ensuring your orders arrive hot, fresh and right on time." },
+  { desc: "The heart of our kitchen, helping craft every meal with care." },
 ];
 
 const About = () => (
@@ -29,7 +30,8 @@ const About = () => (
     </Helmet>
 
     <div className="pt-20">
-      {/* Hero — Meet Saphie with solo photo placeholder */}
+
+      {/* Hero — Meet Saphie with real photo */}
       <section className="py-20 md:py-28 bg-secondary">
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:flex-row items-center gap-12 max-w-5xl mx-auto">
@@ -56,76 +58,56 @@ const About = () => (
               transition={{ duration: 0.7, delay: 0.2 }}
               className="flex-shrink-0"
             >
-              <div className="w-64 h-80 rounded-3xl bg-gradient-to-br from-primary/10 to-secondary/60 border-2 border-dashed border-primary/30 flex flex-col items-center justify-center gap-3 shadow-card">
-                <ImageIcon className="text-primary/40" size={48} />
-                <p className="font-body text-secondary-foreground/50 text-sm font-medium">Saphie's photo</p>
-                <p className="font-body text-secondary-foreground/40 text-xs">Coming soon</p>
-              </div>
+              <img
+                src={saphiePhoto}
+                alt="Saphie - Founder of Saphie's Tasty"
+                className="w-64 h-80 object-cover object-top rounded-3xl shadow-card border-4 border-primary/20"
+              />
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* Story */}
+      {/* Story — no image placeholder */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <SectionHeading title="Our Story" subtitle="From a family kitchen to your favourite caterer." />
-          <div className="max-w-5xl mx-auto flex flex-col lg:flex-row gap-12 items-center">
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              className="flex-1 font-body text-muted-foreground leading-relaxed space-y-6 text-lg"
-            >
-              <p>
-                It all started with Saphie cooking for her family — experimenting with recipes,
-                perfecting the chapati, and making sure everyone left the table with a full belly
-                and a smile. Word spread quickly: friends started asking for party platters,
-                neighbours wanted delivery, and before long, Saphie's Tasty was born.
-              </p>
-              <p>
-                Today, we cater for university events, religious gatherings, family celebrations,
-                and everything in between. But no matter how big we grow, the heart of what we do
-                stays the same — real food, made with real love, for real people.
-              </p>
-            </motion.div>
-
-            <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              className="flex-1 w-full"
-            >
-              <div className="w-full h-80 bg-gradient-to-br from-primary/10 to-muted rounded-2xl border-2 border-dashed border-primary/30 flex flex-col items-center justify-center gap-3 shadow-card">
-                <ImageIcon className="text-primary/40" size={48} />
-                <p className="font-body text-muted-foreground text-sm font-medium">Your photo goes here</p>
-                <p className="font-body text-muted-foreground/60 text-xs">Replace this placeholder with your image</p>
-              </div>
-            </motion.div>
-          </div>
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="max-w-3xl mx-auto font-body text-muted-foreground leading-relaxed space-y-6 text-lg"
+          >
+            <p>
+              It all started with Saphie cooking for her family — experimenting with recipes,
+              perfecting the chapati, and making sure everyone left the table with a full belly
+              and a smile. Word spread quickly: friends started asking for party platters,
+              neighbours wanted delivery, and before long, Saphie's Tasty was born.
+            </p>
+            <p>
+              Today, we cater for university events, religious gatherings, family celebrations,
+              and everything in between. But no matter how big we grow, the heart of what we do
+              stays the same — real food, made with real love, for real people.
+            </p>
+          </motion.div>
         </div>
       </section>
 
-      {/* Meet the Team */}
+      {/* The Team — descriptions only, no photos, no names */}
       <section className="py-20 bg-muted">
         <div className="container mx-auto px-4">
-          <SectionHeading title="Meet the Team" subtitle="The wonderful people behind every meal." />
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-10 max-w-4xl mx-auto">
+          <SectionHeading title="The Team" subtitle="The wonderful people behind every meal." />
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-4xl mx-auto">
             {teamMembers.map((member, i) => (
               <motion.div
-                key={member.name}
+                key={i}
                 initial={{ opacity: 0, y: 40 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="flex flex-col items-center text-center"
+                className="bg-card rounded-2xl p-6 text-center shadow-card border border-border"
               >
-                <div className="w-36 h-36 rounded-full bg-gradient-to-br from-primary/10 to-background border-2 border-dashed border-primary/30 flex flex-col items-center justify-center mb-4 shadow-card">
-                  <ImageIcon className="text-primary/40" size={30} />
-                  <p className="font-body text-muted-foreground/60 text-xs mt-1">Photo</p>
-                </div>
-                <h4 className="font-display text-base font-bold text-foreground">{member.name}</h4>
-                <p className="font-body text-muted-foreground text-sm">{member.role}</p>
+                <p className="font-body text-muted-foreground text-sm leading-relaxed">{member.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -156,6 +138,7 @@ const About = () => (
           </div>
         </div>
       </section>
+
     </div>
   </>
 );
