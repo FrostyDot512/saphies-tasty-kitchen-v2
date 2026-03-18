@@ -2,7 +2,6 @@ import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
 import { Heart, Users, Utensils, Clock } from "lucide-react";
 import SectionHeading from "@/components/SectionHeading";
-import saphiePhoto from "@/assets/images/STK11.jpeg";
 
 const values = [
   { icon: Heart, title: "Made with Love", desc: "Every meal is prepared with the same care and passion as cooking for our own family." },
@@ -31,7 +30,7 @@ const About = () => (
 
     <div className="pt-20">
 
-      {/* Hero — Meet Saphie with real photo */}
+      {/* Hero — Meet Saphie with real photo from public */}
       <section className="py-20 md:py-28 bg-secondary">
         <div className="container mx-auto px-4">
           <div className="flex flex-col lg:flex-row items-center gap-12 max-w-5xl mx-auto">
@@ -59,7 +58,7 @@ const About = () => (
               className="flex-shrink-0"
             >
               <img
-                src={saphiePhoto}
+                src="/images/STK11.jpeg"
                 alt="Saphie - Founder of Saphie's Tasty"
                 className="w-64 h-80 object-cover object-top rounded-3xl shadow-card border-4 border-primary/20"
               />
@@ -68,7 +67,7 @@ const About = () => (
         </div>
       </section>
 
-      {/* Story — no image placeholder */}
+      {/* Story */}
       <section className="py-20 bg-background">
         <div className="container mx-auto px-4">
           <SectionHeading title="Our Story" subtitle="From a family kitchen to your favourite caterer." />
@@ -93,7 +92,7 @@ const About = () => (
         </div>
       </section>
 
-      {/* The Team — descriptions only, no photos, no names */}
+      {/* The Team — descriptions only */}
       <section className="py-20 bg-muted">
         <div className="container mx-auto px-4">
           <SectionHeading title="The Team" subtitle="The wonderful people behind every meal." />

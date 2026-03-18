@@ -1,12 +1,12 @@
 import { Helmet } from "react-helmet-async";
 import { motion } from "framer-motion";
 import SectionHeading from "@/components/SectionHeading";
-import photo1 from "@/assets/images/STK5.jpeg";
-import photo2 from "@/assets/images/STK9.jpeg";
-import photo3 from "@/assets/images/STK10.jpeg";
 
-const photos = [photo1, photo2, photo3];
-const photoLabels = ["Samosas", "Mandazi", "Meat & Pineapple"];
+const photos = [
+  { src: "/images/STK5.jpeg", alt: "Samosas" },
+  { src: "/images/STK9.jpeg", alt: "Mandazi" },
+  { src: "/images/STK10.jpeg", alt: "Meat and Pineapple" },
+];
 
 const videos = [
   "/videos/STK1.mp4",
@@ -47,7 +47,7 @@ const Gallery = () => {
           <div className="container mx-auto px-4">
             <SectionHeading title="Photo Gallery" subtitle="Snapshots from our kitchen and events." />
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
-              {photos.map((src, i) => (
+              {photos.map((photo, i) => (
                 <motion.div
                   key={i}
                   initial={{ opacity: 0, scale: 0.9 }}
@@ -57,8 +57,8 @@ const Gallery = () => {
                   className="aspect-square rounded-2xl overflow-hidden shadow-card border border-border group"
                 >
                   <img
-                    src={src}
-                    alt={photoLabels[i]}
+                    src={photo.src}
+                    alt={photo.alt}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                 </motion.div>
